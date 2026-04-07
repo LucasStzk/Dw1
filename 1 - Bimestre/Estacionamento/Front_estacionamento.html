@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacionamento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f4f3ef;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .header-icon {
+            width: 44px;
+            height: 44px;
+            background: #e6f1fb;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .header-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .header-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.3px;
+        }
+
+        .header-sub {
+            font-size: 13px;
+            color: #888;
+            margin-top: 1px;
+        }
+
+        .field-block {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 8px;
+        }
+
+        input[type="number"] {
+            width: 110px;
+            height: 44px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fafafa;
+            color: #1a1a1a;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.15s;
+            -moz-appearance: textfield;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        input[type="number"]:focus {
+            border-color: #378add;
+        }
+
+        .hour-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hour-hint {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .checkbox-option {
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            padding: 12px 14px;
+            cursor: pointer;
+            transition: border-color 0.15s, background 0.15s;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            user-select: none;
+        }
+
+        .checkbox-option:hover {
+            border-color: #ccc;
+            background: #fafafa;
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #378add;
+            margin-top: 2px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .checkbox-text-main {
+            font-size: 13px;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .checkbox-text-sub {
+            font-size: 11px;
+            color: #aaa;
+            margin-top: 2px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #f0f0f0;
+            margin: 1.5rem 0;
+        }
+
+        button {
+            width: 100%;
+            height: 48px;
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: opacity 0.15s, transform 0.1s;
+            margin-top: 1.5rem;
+        }
+
+        button:hover { opacity: 0.85; }
+        button:active { transform: scale(0.99); }
+
+        #saida {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            margin-top: 1.25rem;
+            min-height: 36px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="header-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#378add" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3"/>
+                    <path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>
+                </svg>
+            </div>
+            <div>
+                <div class="header-title">Estacionamento</div>
+                <div class="header-sub">Cálculo de tarifa</div>
+            </div>
+        </div>
+
+        <div class="field-block">
+            <label for="inputhoras">Horas no estacionamento</label>
+            <div class="hour-row">
+                <input type="number" id="inputhoras" min="1" placeholder="0">
+                <span class="hour-hint">hora(s)</span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="field-block">
+            <label>Opções</label>
+            <div class="checkbox-grid">
+                <label class="checkbox-option" for="inputtipo">
+                    <input type="checkbox" id="inputtipo" name="tamanho" value="grande">
+                    <div>
+                        <div class="checkbox-text-main">Veículo grande</div>
+                        <div class="checkbox-text-sub">+25% na tarifa</div>
+                    </div>
+                </label>
+                <label class="checkbox-option" for="inputfrequente">
+                    <input type="checkbox" name="frequente" id="inputfrequente">
+                    <div>
+                        <div class="checkbox-text-main">Cliente frequente</div>
+                        <div class="checkbox-text-sub">5% de desconto</div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <button onclick="calcular()">Calcular tarifa</button>
+
+        <h1 id="saida"></h1>
+    </div>
+
+    <script src="back_estacionamento.js"></script>
+</body>
+</html>
