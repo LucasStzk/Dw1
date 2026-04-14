@@ -1,9 +1,26 @@
 function calcular(){
 
     let tarifa = 0;
-    let horas = parseInt(document.getElementById("inputhoras").value);
+    let checkinValue = document.getElementById("inputcheckin").value;
+    let checkoutValor = document.getElementById("inputcheckout").value;
     let tipo = document.getElementById("inputtipo").checked;
     let frequencia = document.getElementById("inputfrequente").checked;
+
+    if(!checkinValue || !checkoutValor){
+        alert("Informe data e hora de entrada e saída.");
+        return;
+    }
+
+    let checkin = new Date(checkinValue);
+    let checkout = new Date(checkoutValor);
+
+    if(checkout <= checkin){
+        alert("A data e hora de saída devem ser posteriores à entrada.");
+        return;
+    }
+
+    let diffMs = checkout - checkin;
+    let horas = Math.ceil(diffMs / (1000 * 60 * 60));
 
     if(horas <= 0){
         alert("As horas devem ser maior que 0");
@@ -31,7 +48,7 @@ function calcular(){
     }
 
     document.getElementById("saida").innerHTML =
-        "O valor é igual R$ " + tarifa.toFixed(2);
+        "Tempo: " + horas + " hora(s) | Valor: R$ " + tarifa.toFixed(2);
 }
 
 
