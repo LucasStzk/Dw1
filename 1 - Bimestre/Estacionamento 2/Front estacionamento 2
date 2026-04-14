@@ -218,10 +218,16 @@
         </div>
 
         <div class="field-block">
-            <label for="inputhoras">Horas no estacionamento</label>
+            <label for="inputcheckin">Entrada (check-in)</label>
             <div class="hour-row">
-                <input type="number" id="inputhoras" min="1" placeholder="0">
-                <span class="hour-hint">hora(s)</span>
+                <input type="datetime-local" id="inputcheckin">
+            </div>
+        </div>
+
+        <div class="field-block">
+            <label for="inputcheckout">Saída (check-out)</label>
+            <div class="hour-row">
+                <input type="datetime-local" id="inputcheckout">
             </div>
         </div>
 
