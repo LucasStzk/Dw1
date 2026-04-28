@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autorização para viagem</title>
+</head>
+<body>
+    <h1>Formulario para viagem</h1>
+    <br>
+    <h2>Para participar preencha o formulario</h2>
+    <br>
+    <label for="cpfdoatleta">Cpf do atleta:</label>
+    <input type="number" maxlength="11" id="cpfdoatleta">
+    <br>
+    <label for="nomedoatleta">Nome do atleta:</label>
+    <input type="text" id="nomedoatleta">
+    <br>
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade">
+    <br>
+    <label for="nomedoresponsavel">Nome do responsável:</label>
+    <input type="text" id="nomedoresponsavel">
+    <br>
+    <label for="cidadedeorigem">Cidade de origem:</label>
+    <input type="text" id="cidadedeorigem">
+    <br>
+    <label for="cidadededestino">Cidade de destino:</label>
+    <input type="text" id="cidadededestino">
+    <br>
+    <label for="modalidadeesportiva">Modalidade esportiva:</label>
+    <select id="materiaFavorita">
+        <option value="">-- Selecione uma opção --</option>
+        <option value="matematica">Matemática</option>
+        <option value="portugues">Português</option>
+        <option value="historia">História</option>
+        <option value="ciencias">Ciências</option>
+        <option value="ingles">Inglês</option>
+    </select>
+
+    <br>
+    <script>
+        const cpfdoatleta = document.getElementById('cpfdoatleta');
+        const nomedoatleta = document.getElementById('nomedoatleta');
+        const idade = document.getElementById('idade');
+        const nomedoresponsavel = document.getElementById('nomedoresponsavel');
+        const cidadedeorigem = document.getElementById('cidadedeorigem');
+        const cidadededestino = document.getElementById('cidadededestino');
+        const modalidadeesportiva = document.getElementById('modalidadeesportiva');
+
+    </script>
+</body>
+</html>
