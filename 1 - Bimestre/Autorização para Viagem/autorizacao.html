@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autorização para viagem</title>
 </head>
-<body>
+<body><header>
     <h1>Formulario para viagem</h1>
-    <br>
-    <h2>Para participar preencha o formulario</h2>
-    <br>
+        <p>Para participar preencha o formulario</p>
+    </header>
     <label for="cpfdoatleta">Cpf do atleta:</label>
     <input type="number" maxlength="11" id="cpfdoatleta">
     <br>
@@ -29,25 +28,20 @@
     <input type="text" id="cidadededestino">
     <br>
     <label for="modalidadeesportiva">Modalidade esportiva:</label>
-    <select id="materiaFavorita">
+    <select id="modalidadeesportiva">
         <option value="">-- Selecione uma opção --</option>
-        <option value="matematica">Matemática</option>
-        <option value="portugues">Português</option>
-        <option value="historia">História</option>
-        <option value="ciencias">Ciências</option>
-        <option value="ingles">Inglês</option>
+        <option value="futebol">Futebol</option>
+        <option value="basquete">Basquete</option>
+        <option value="volei">Vôlei</option>
+        <option value="natacao">Natação</option>
+        <option value="atletismo">Atletismo</option>
     </select>
-
     <br>
-    <script>
-        const cpfdoatleta = document.getElementById('cpfdoatleta');
-        const nomedoatleta = document.getElementById('nomedoatleta');
-        const idade = document.getElementById('idade');
-        const nomedoresponsavel = document.getElementById('nomedoresponsavel');
-        const cidadedeorigem = document.getElementById('cidadedeorigem');
-        const cidadededestino = document.getElementById('cidadededestino');
-        const modalidadeesportiva = document.getElementById('modalidadeesportiva');
+    <input type="button" onclick="enviarFormulario()" value="Enviar Formulário">
+    <br>
+    <span id="saida"></span>
+<script src="autorizacao.js"></script>
 
-    </script>
+     
 </body>
 </html>
