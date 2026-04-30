@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento da autorização para viagem</title>
+</head>
+<body>
+    <header>
+        <center><h1>AUTORIZAÇÃO DE VIAGEM ESPORTIVA</h1></center>
+    </header>
+    <span id="autorizacao"></span>
+<script>
+    document.getElementById('autorizacao').innerHTML = `<p>Eu, ${localStorage.getItem('nomedoresponsavel')}, portador do CPF ${localStorage.getItem('cpfdoatleta')}, autorizo meu filho(a) ${localStorage.getItem('nomedoatleta')}, de ${localStorage.getItem('idade')} anos, a participar da viagem esportiva com destino a ${localStorage.getItem('cidadededestino')}, saindo de ${localStorage.getItem('cidadedeorigem')}, para competir na modalidade de ${localStorage.getItem('modalidadeesportiva')}.</p>
+    <p>Declaro que estou ciente dos riscos envolvidos e assumo total responsabilidade pela segurança e bem-estar de meu filho(a) durante a viagem e a competição.</p>
+    <p>Assinatura: ____________________________</p>
+    <p>Data: ____/____/________</p>`;
+    
+var categoria = localStorage.getItem('categoria');
+var cpfdoatleta = localStorage.getItem('cpfdoatleta');
+var nomedoatleta = localStorage.getItem('nomedoatleta');
+var idade = localStorage.getItem('idade');
+var nomedoresponsavel = localStorage.getItem('nomedoresponsavel');
+var cidadedeorigem = localStorage.getItem('cidadedeorigem');
+var cidadededestino = localStorage.getItem('cidadededestino');
+var modalidadeesportiva = localStorage.getItem('modalidadeesportiva');
+
+ 
+
+
+
+
+</script>
+</body>
+</html>
